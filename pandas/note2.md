@@ -53,4 +53,37 @@ Indexing operator and attribute selection are nice because they work just like t
 
 ### Manipulation the index
 - Label-based selection derives its power from the labels in the index.
-- The index we use is not immitable
+- The index we use is not immitable. This implise that we can manipulate the index in any way we see fit.
+- The set_index() method can be used to do this job. Example:
+    `reviews.set_index("title)`
+
+### Conditional selection
+- we need to ask questions base on the conditions
+- If we are instrested on better-than-average wines produces in italy. we using this:
+    `reviews.country == 'Italy` and it will just have boolen output on every dats entries (True or False).
+- Now we can populate the dataframe base on these boolen values:
+    `reviews.loc[reviews.country=='Italy']` this will only populate the entry with country name `Italy`.
+- Our main goal was to know the better than average from italy for we need another conditionals:
+    `reviews.loc[(reviews.country=='Italy') & (reviews.points >= 90)]` this will only populate the entry with country name `Italy` and points above or equal to `90`.
+- You can use `|` for or conditionals:
+    `reviews.loc[(reviews.country=='Italy') | (reviews.points >= 90)]`
+- Pandas comes with a few built-in conditional selectors:
+    `isin()`
+    `isnull()`
+    `notnull()`
+- `isin` is lets us select data whose value is in a list of values. for example:
+    `reviews.loc[reviews.country.isin(['Italy', 'France'])]` this only populate the data which have country name Italy and France.
+-`notnull` and `isnull`. These methods let us highlight values which are( are not) empty(NaN). For example, to filter out wines lacking a price tag in the dataset:
+    `reviews.loc[reviews.price.notnull()]`
+### Assigning Data
+- we can asign either a constant value:
+    `reviews['critic']= 'everyone'`
+    `reviews['critic']`
+    The output is critic with same value of everyone throughout the entries
+- We can also iterate the values:
+    `reviews['index_backwards'] = range(len(reviews),0,-1)`
+    `reviews['index_backwards']`
+
+    
+
+
