@@ -1,5 +1,5 @@
 # Fist day of Machine Learinig
-## Lesson on pandas
+## Creating, Reading and Writing
 
 ### Importing pandas library
     `import pandas as pd`
