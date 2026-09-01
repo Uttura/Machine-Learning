@@ -49,5 +49,4 @@
 - To sort index values, use `sort_index()`:
     `countries_reviewed.sort_index()`
 - You can sort more then one column at a time:
-    countries_reviewed.sort_values(by=['country','len'])
-    
+    `countries_reviewed.sort_values(by=['country','len'])`
