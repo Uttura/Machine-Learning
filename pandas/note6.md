@@ -1,4 +1,4 @@
-# Senveth Day of ML
+# Sixth Day of ML
 ## Renaming and Combining
 ### Renaming
 - In this the first function name is `rename()`.
